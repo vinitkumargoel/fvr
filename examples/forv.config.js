@@ -1,4 +1,4 @@
-// FVR Example Configuration
+// FORV Example Configuration
 // This file demonstrates all available configuration options
 
 module.exports = {
@@ -67,7 +67,7 @@ module.exports = {
       name: 'multi-env-app',
       script: 'server.js',
       env: [
-        // FVR uses the first environment by default
+        // FORV uses the first environment by default
         {
           NODE_ENV: 'development',
           PORT: 3000,

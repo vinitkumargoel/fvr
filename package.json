@@ -4,7 +4,7 @@
   "description": "Lightweight Node.js process manager",
   "main": "lib/index.js",
   "bin": {
-    "forv": "bin/fvr.js"
+    "forv": "bin/forv.js"
   },
   "scripts": {
     "test": "vitest run",

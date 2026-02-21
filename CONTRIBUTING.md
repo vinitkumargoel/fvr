@@ -131,7 +131,7 @@ const { loadConfig } = require('../lib/core/config');
 describe('config.js', () => {
   describe('loadConfig', () => {
     it('should load a valid config file', () => {
-      const config = loadConfig('./examples/fvr.config.js');
+      const config = loadConfig('./examples/forv.config.js');
       expect(config).toBeDefined();
       expect(config.apps).toBeInstanceOf(Array);
     });

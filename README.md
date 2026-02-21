@@ -40,7 +40,7 @@ npx @vinitkumargoel/fvr start
 
 ### 1. Create a config file
 
-Create `fvr.config.js` in your project root:
+Create `forv.config.js` in your project root:
 
 ```javascript
 module.exports = {
@@ -92,9 +92,9 @@ forv delete my-app     # Remove from FORV
 ### Config File
 
 FORV looks for configuration in the following files (in order):
-- `fvr.config.js`
-- `fvr.config.cjs`
-- `.fvrrc.js`
+- `forv.config.js`
+- `forv.config.cjs`
+- `.forvrc.js`
 
 ### Configuration Options
 
@@ -162,8 +162,8 @@ FORV uses the first environment by default.
 Start apps defined in config file.
 
 ```bash
-forv start                   # Use fvr.config.js in current directory
-forv start fvr.config.js     # Use specific config file
+forv start                   # Use forv.config.js in current directory
+forv start forv.config.js     # Use specific config file
 forv start my-app            # Restart specific app by name
 ```
 
@@ -376,7 +376,7 @@ ls -la ~/.forv/
 ### App not starting?
 
 - Verify script path exists: `ls -la path/to/script.js`
-- Check config syntax: `node -c fvr.config.js`
+- Check config syntax: `node -c forv.config.js`
 - View logs: `forv logs <app-name>`
 
 ### Permission issues?
