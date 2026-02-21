@@ -1,6 +1,6 @@
 {
   "name": "@vinitkumargoel/fvr",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Lightweight Node.js process manager",
   "main": "lib/index.js",
   "bin": {

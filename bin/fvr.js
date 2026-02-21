@@ -13,7 +13,7 @@ const updateCommand = require('../lib/commands/update');
 program
   .name('fvr')
   .description('FVR - Lightweight Node.js process manager')
-  .version('0.3.0');
+  .version('0.3.1');
 
 // Start command
 program
