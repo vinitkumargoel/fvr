@@ -165,13 +165,28 @@ Start and daemonize an app.
 
 **Options:**
 - `--watch` - Watch folder for changes
+- `--name <name>` - App name (for inline start)
+- `--cwd <path>` - Working directory
+- `--instances <n>` - Number of instances (cluster mode)
+- `--max-memory <limit>` - Memory restart limit (e.g., 200M, 1G)
+- `--env <key=value>` - Environment variables (can be repeated)
 
 ```bash
+# Start from config file
 fvr start                      # Start all apps from fvr.config.js
 fvr start fvr.config.js        # Start all apps from specific config file
 fvr start my-app               # Start specific app by name (from config or state)
 fvr start --watch              # Start all apps with file watching enabled
 fvr start my-app --watch       # Start specific app with watch mode
+
+# Inline start (PM2-style, without config file)
+fvr start npm --name my-app -- start
+fvr start npm --name api --cwd /path/to/app -- run dev
+fvr start node --name worker -- worker.js
+fvr start ./server.js --name web --instances 4
+fvr start npm --name frontend --watch -- run dev
+fvr start node --name app --max-memory 500M -- app.js
+fvr start npm --name service --env PORT=3000 --env NODE_ENV=production -- start
 ```
 
 ### `fvr stop <name>`
@@ -263,6 +278,35 @@ fvr logs my-app --out        # Show only stdout
 **Logs are stored at:** `~/.fvr/logs/<name>-out.log` and `~/.fvr/logs/<name>-err.log`
 
 ## 📚 Examples
+
+### Inline Start (Without Config File)
+
+You can start apps directly from the command line without creating a config file:
+
+```bash
+# Start npm scripts
+fvr start npm --name my-app -- start
+fvr start npm --name api --cwd /path/to/project -- run dev
+
+# Start Node.js scripts
+fvr start node --name worker -- worker.js
+fvr start ./server.js --name web
+
+# With clustering
+fvr start node --name api --instances 4 -- server.js
+
+# With watch mode (for development)
+fvr start npm --name dev --watch -- run dev
+
+# With memory limit
+fvr start node --name app --max-memory 500M -- app.js
+
+# With environment variables
+fvr start npm --name service --env PORT=3000 --env NODE_ENV=production -- start
+
+# Complete example for Next.js
+fvr start npm --name web --cwd /path/to/nextjs --instances 2 -- start
+```
 
 ### Simple Fork Mode App
 

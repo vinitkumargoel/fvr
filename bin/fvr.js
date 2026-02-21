@@ -13,15 +13,24 @@ const updateCommand = require('../lib/commands/update');
 program
   .name('fvr')
   .description('FVR - Lightweight Node.js process manager')
-  .version('0.2.1');
+  .version('0.3.0');
 
 // Start command
 program
   .command('start [name]')
   .description('start and daemonize an app')
   .option('--watch', 'Watch folder for changes')
-  .action((nameOrConfig, options) => {
-    startCommand(nameOrConfig, options);
+  .option('--name <name>', 'App name (for inline start)')
+  .option('--cwd <path>', 'Working directory')
+  .option('--instances <n>', 'Number of instances (cluster mode)', parseInt)
+  .option('--max-memory <limit>', 'Memory restart limit (e.g., 200M, 1G)')
+  .option('--env <key=value>', 'Environment variables (can be repeated)', (value, previous) => {
+    const [key, val] = value.split('=');
+    return { ...previous, [key]: val };
+  }, {})
+  .allowUnknownOption()
+  .action((nameOrConfig, options, command) => {
+    startCommand(nameOrConfig, options, command);
   });
 
 // Stop command
