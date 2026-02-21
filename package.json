@@ -1,10 +1,10 @@
 {
-  "name": "forv",
+  "name": "@vinitkumargoel/fvr",
   "version": "0.1.0",
   "description": "Lightweight Node.js process manager",
   "main": "lib/index.js",
   "bin": {
-    "forv": "bin/forv.js"
+    "fvr": "bin/fvr.js"
   },
   "scripts": {
     "test": "vitest run",
@@ -23,11 +23,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vinitkumargoel/forv.git"
+    "url": "git+https://github.com/vinitkumargoel/fvr.git"
   },
-  "homepage": "https://github.com/vinitkumargoel/forv#readme",
+  "homepage": "https://github.com/vinitkumargoel/fvr#readme",
   "bugs": {
-    "url": "https://github.com/vinitkumargoel/forv/issues"
+    "url": "https://github.com/vinitkumargoel/fvr/issues"
   },
   "engines": {
     "node": ">=16.0.0"

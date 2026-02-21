@@ -15,8 +15,8 @@ Thank you for your interest in contributing to FVR! This document provides guide
 1. **Fork and clone the repository**
 
 ```bash
-git clone https://github.com/vinitkumargoel/forv.git
-cd forv
+git clone https://github.com/vinitkumargoel/fvr.git
+cd fvr
 ```
 
 2. **Install dependencies**
@@ -31,7 +31,7 @@ npm install
 npm link
 ```
 
-Now you can use the `forv` command globally, and it will use your local development version.
+Now you can use the `fvr` command globally, and it will use your local development version.
 
 4. **Run tests**
 
@@ -131,7 +131,7 @@ const { loadConfig } = require('../lib/core/config');
 describe('config.js', () => {
   describe('loadConfig', () => {
     it('should load a valid config file', () => {
-      const config = loadConfig('./examples/forv.config.js');
+      const config = loadConfig('./examples/fvr.config.js');
       expect(config).toBeDefined();
       expect(config.apps).toBeInstanceOf(Array);
     });
