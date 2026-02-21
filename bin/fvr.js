@@ -10,8 +10,8 @@ const logsCommand = require('../lib/commands/logs');
 
 // CLI configuration
 program
-  .name('fvr')
-  .description('FVR - Lightweight Node.js process manager')
+  .name('forv')
+  .description('FORV - Lightweight Node.js process manager')
   .version('0.1.0');
 
 // Start command

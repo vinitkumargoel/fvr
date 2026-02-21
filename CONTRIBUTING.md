@@ -15,8 +15,8 @@ Thank you for your interest in contributing to FVR! This document provides guide
 1. **Fork and clone the repository**
 
 ```bash
-git clone https://github.com/vinitkumargoel/fvr.git
-cd fvr
+git clone https://github.com/vinitkumargoel/forv.git
+cd forv
 ```
 
 2. **Install dependencies**
@@ -31,9 +31,7 @@ npm install
 npm link
 ```
 
-Now you can use the `fvr` command globally, and it will use your local development version.
-
-Note: The package is published as `@vinitkumargoel/fvr` but the command is `fvr`.
+Now you can use the `forv` command globally, and it will use your local development version.
 
 4. **Run tests**
 

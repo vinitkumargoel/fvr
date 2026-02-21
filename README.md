@@ -1,10 +1,10 @@
-# FVR
+# FORV
 
-[![npm version](https://img.shields.io/npm/v/@vinitkumargoel/fvr.svg)](https://www.npmjs.com/package/@vinitkumargoel/fvr)
+[![npm version](https://img.shields.io/npm/v/forv.svg)](https://www.npmjs.com/package/forv)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/node/v/fvr.svg)](https://nodejs.org)
+[![Node.js Version](https://img.shields.io/node/v/forv.svg)](https://nodejs.org)
 
-**FVR** is a lightweight, minimal Node.js process manager — a PM2 alternative designed for simplicity and efficiency. Zero bloat, zero complexity. Just process management done right.
+**FORV** is a lightweight, minimal Node.js process manager — a PM2 alternative designed for simplicity and efficiency. Zero bloat, zero complexity. Just process management done right.
 
 ## ✨ Features
 
@@ -64,34 +64,34 @@ module.exports = {
 ### 2. Start your app
 
 ```bash
-fvr start
+forv start
 ```
 
 ### 3. Check status
 
 ```bash
-fvr list
+forv list
 ```
 
 ### 4. View logs
 
 ```bash
-fvr logs my-app
+forv logs my-app
 ```
 
 ### 5. Manage your app
 
 ```bash
-fvr restart my-app    # Restart
-fvr stop my-app       # Stop
-fvr delete my-app     # Remove from FVR
+forv restart my-app    # Restart
+forv stop my-app       # Stop
+forv delete my-app     # Remove from FORV
 ```
 
 ## ⚙️ Configuration
 
 ### Config File
 
-FVR looks for configuration in the following files (in order):
+FORV looks for configuration in the following files (in order):
 - `fvr.config.js`
 - `fvr.config.cjs`
 - `.fvrrc.js`
@@ -153,53 +153,53 @@ env: [
 ]
 ```
 
-FVR uses the first environment by default.
+FORV uses the first environment by default.
 
 ## 🎮 CLI Commands
 
-### `fvr start [config]`
+### `forv start [config]`
 
 Start apps defined in config file.
 
 ```bash
-fvr start                   # Use fvr.config.js in current directory
-fvr start fvr.config.js     # Use specific config file
-fvr start my-app            # Restart specific app by name
+forv start                   # Use fvr.config.js in current directory
+forv start fvr.config.js     # Use specific config file
+forv start my-app            # Restart specific app by name
 ```
 
-### `fvr stop <name>`
+### `forv stop <name>`
 
 Stop a running app.
 
 ```bash
-fvr stop my-app      # Stop specific app
-fvr stop all         # Stop all apps
+forv stop my-app      # Stop specific app
+forv stop all         # Stop all apps
 ```
 
-### `fvr restart <name>`
+### `forv restart <name>`
 
 Restart a running app.
 
 ```bash
-fvr restart my-app   # Restart specific app
-fvr restart all      # Restart all apps
+forv restart my-app   # Restart specific app
+forv restart all      # Restart all apps
 ```
 
-### `fvr delete <name>`
+### `forv delete <name>`
 
-Stop and remove an app from FVR state.
+Stop and remove an app from FORV state.
 
 ```bash
-fvr delete my-app    # Delete specific app
-fvr delete all       # Delete all apps
+forv delete my-app    # Delete specific app
+forv delete all       # Delete all apps
 ```
 
-### `fvr list`
+### `forv list`
 
 Display a table of all managed apps and their status.
 
 ```bash
-fvr list             # or: fvr ls
+forv list             # or: forv ls
 ```
 
 **Example output:**
@@ -215,18 +215,18 @@ fvr list             # or: fvr ls
 Total: 2 app(s) | 2 online | 0 stopped
 ```
 
-### `fvr logs <name>`
+### `forv logs <name>`
 
 Stream logs for an app.
 
 ```bash
-fvr logs my-app              # Stream stdout + stderr
-fvr logs my-app --lines 100  # Show last 100 lines
-fvr logs my-app --err        # Show only stderr
-fvr logs my-app --out        # Show only stdout
+forv logs my-app              # Stream stdout + stderr
+forv logs my-app --lines 100  # Show last 100 lines
+forv logs my-app --err        # Show only stderr
+forv logs my-app --out        # Show only stdout
 ```
 
-**Logs are stored at:** `~/.fvr/logs/<name>-out.log` and `~/.fvr/logs/<name>-err.log`
+**Logs are stored at:** `~/.forv/logs/<name>-out.log` and `~/.forv/logs/<name>-err.log`
 
 ## 📚 Examples
 
@@ -307,16 +307,16 @@ module.exports = {
 
 ### Daemon Architecture
 
-FVR runs a persistent daemon process that:
+FORV runs a persistent daemon process that:
 - Manages all child processes (fork/cluster)
 - Monitors memory usage every 5 seconds
 - Handles auto-restart with crash loop detection
 - Watches files for changes (when enabled)
-- Pipes logs to `~/.fvr/logs/`
+- Pipes logs to `~/.forv/logs/`
 
 ### State Persistence
 
-FVR stores process metadata in `~/.fvr/state.json`:
+FORV stores process metadata in `~/.forv/state.json`:
 - App configurations
 - Process IDs (PIDs)
 - Restart counts and history
@@ -324,11 +324,11 @@ FVR stores process metadata in `~/.fvr/state.json`:
 
 ### IPC Communication
 
-CLI commands communicate with the daemon via Unix domain socket (`~/.fvr/daemon.sock`).
+CLI commands communicate with the daemon via Unix domain socket (`~/.forv/daemon.sock`).
 
-## 🆚 FVR vs PM2
+## 🆚 FORV vs PM2
 
-| Feature | FVR | PM2 |
+| Feature | FORV | PM2 |
 |---------|-----|-----|
 | **Size** | ~65 dependencies | 200+ dependencies |
 | **Complexity** | Single config file | Multiple config formats, ecosystem |
@@ -338,7 +338,7 @@ CLI commands communicate with the daemon via Unix domain socket (`~/.fvr/daemon.
 | **Learning Curve** | Minutes | Hours |
 | **Best For** | Production servers, VPS, containers | Large teams, full DevOps pipeline |
 
-**Use FVR if you want:**
+**Use FORV if you want:**
 - ✅ Simple, reliable process management
 - ✅ Minimal resource overhead
 - ✅ Easy configuration
@@ -353,7 +353,7 @@ CLI commands communicate with the daemon via Unix domain socket (`~/.fvr/daemon.
 ## 📂 Project Structure
 
 ```
-~/.fvr/
+~/.forv/
 ├── state.json           # Process state persistence
 ├── daemon.sock          # IPC socket
 └── logs/
@@ -370,20 +370,20 @@ CLI commands communicate with the daemon via Unix domain socket (`~/.fvr/daemon.
 ps aux | grep fvr
 
 # Check logs (if any)
-ls -la ~/.fvr/
+ls -la ~/.forv/
 ```
 
 ### App not starting?
 
 - Verify script path exists: `ls -la path/to/script.js`
 - Check config syntax: `node -c fvr.config.js`
-- View logs: `fvr logs <app-name>`
+- View logs: `forv logs <app-name>`
 
 ### Permission issues?
 
 ```bash
-# Ensure FVR home directory has correct permissions
-chmod 755 ~/.fvr/
+# Ensure FORV home directory has correct permissions
+chmod 755 ~/.forv/
 ```
 
 ## 🤝 Contributing
@@ -394,7 +394,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ```bash
 # Clone the repository
-git clone https://github.com/vinitkumargoel/fvr.git
+git clone https://github.com/vinitkumargoel/forv.git
 cd fvr
 
 # Install dependencies
@@ -425,7 +425,7 @@ npm test
 ### Reporting Issues
 
 When reporting bugs, please include:
-- FVR version (`fvr --version`)
+- FORV version (`forv --version`)
 - Node.js version (`node --version`)
 - Operating system
 - Steps to reproduce
@@ -442,8 +442,8 @@ MIT © Vinit Kumar Goel
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/vinitkumargoel/fvr/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/vinitkumargoel/fvr/discussions)
+- **Issues**: [GitHub Issues](https://github.com/vinitkumargoel/forv/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/vinitkumargoel/forv/discussions)
 
 ---
 
