@@ -1,6 +1,6 @@
 # FVR
 
-[![npm version](https://img.shields.io/npm/v/fvr.svg)](https://www.npmjs.com/package/fvr)
+[![npm version](https://img.shields.io/npm/v/@vinitkumargoel/fvr.svg)](https://www.npmjs.com/package/@vinitkumargoel/fvr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/fvr.svg)](https://nodejs.org)
 
@@ -27,13 +27,13 @@
 Install globally via npm:
 
 ```bash
-npm install -g fvr
+npm install -g @vinitkumargoel/fvr
 ```
 
 Or use with npx (no installation needed):
 
 ```bash
-npx fvr start
+npx @vinitkumargoel/fvr start
 ```
 
 ## 🚀 Quick Start

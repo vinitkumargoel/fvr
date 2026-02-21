@@ -33,6 +33,8 @@ npm link
 
 Now you can use the `fvr` command globally, and it will use your local development version.
 
+Note: The package is published as `@vinitkumargoel/fvr` but the command is `fvr`.
+
 4. **Run tests**
 
 ```bash

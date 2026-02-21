@@ -1,16 +1,15 @@
 {
-  "name": "fvr",
+  "name": "@vinitkumargoel/fvr",
   "version": "0.1.0",
   "description": "Lightweight Node.js process manager",
   "main": "lib/index.js",
   "bin": {
-    "fvr": "./bin/fvr.js"
+    "fvr": "bin/fvr.js"
   },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "prepublishOnly": "npm test"
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "process-manager",
@@ -20,8 +19,16 @@
     "process",
     "monitor"
   ],
-  "author": "",
+  "author": "Vinit Kumar Goel <vinitkumargoel@example.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinitkumargoel/fvr.git"
+  },
+  "homepage": "https://github.com/vinitkumargoel/fvr#readme",
+  "bugs": {
+    "url": "https://github.com/vinitkumargoel/fvr/issues"
+  },
   "engines": {
     "node": ">=16.0.0"
   },
