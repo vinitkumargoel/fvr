@@ -212,6 +212,19 @@ fvr del my-app                 # Same as above (alias)
 fvr delete all                 # Delete all apps
 ```
 
+### `fvr update [name|file|all...]`
+
+Update and reload apps with new configuration from config file.
+
+**Alias:** `fvr reload`
+
+```bash
+fvr update                     # Update all apps from fvr.config.js
+fvr update my-app              # Update specific app from config
+fvr update fvr.config.js       # Update all apps from specific config file
+fvr reload my-app              # Same as update (alias)
+```
+
 ### `fvr list`
 
 List all processes.

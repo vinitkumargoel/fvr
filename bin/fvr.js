@@ -7,6 +7,7 @@ const restartCommand = require('../lib/commands/restart');
 const deleteCommand = require('../lib/commands/delete');
 const listCommand = require('../lib/commands/list');
 const logsCommand = require('../lib/commands/logs');
+const updateCommand = require('../lib/commands/update');
 
 // CLI configuration
 program
@@ -48,6 +49,15 @@ program
   .description('stop and delete a process from fvr process list')
   .action((name, options) => {
     deleteCommand(name, options);
+  });
+
+// Update/Reload command
+program
+  .command('update [name|file|all...]')
+  .alias('reload')
+  .description('update and reload apps with new configuration from config file')
+  .action((nameOrConfig, options) => {
+    updateCommand(nameOrConfig, options);
   });
 
 // List command
