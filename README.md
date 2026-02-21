@@ -167,11 +167,11 @@ Start and daemonize an app.
 - `--watch` - Watch folder for changes
 
 ```bash
-fvr start                      # Use fvr.config.js in current directory
-fvr start fvr.config.js        # Use specific config file
-fvr start my-app               # Start specific app by name
-fvr start --watch              # Start with file watching enabled
-fvr start my-app --watch       # Start app with watch mode
+fvr start                      # Start all apps from fvr.config.js
+fvr start fvr.config.js        # Start all apps from specific config file
+fvr start my-app               # Start specific app by name (from config or state)
+fvr start --watch              # Start all apps with file watching enabled
+fvr start my-app --watch       # Start specific app with watch mode
 ```
 
 ### `fvr stop <name|id|all...>`
