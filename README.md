@@ -159,7 +159,7 @@ FVR uses the first environment by default.
 
 ## 🎮 CLI Commands
 
-### `fvr start [name|file|id...]`
+### `fvr start [name]`
 
 Start and daemonize an app.
 
@@ -174,7 +174,7 @@ fvr start --watch              # Start all apps with file watching enabled
 fvr start my-app --watch       # Start specific app with watch mode
 ```
 
-### `fvr stop <name|id|all...>`
+### `fvr stop <name>`
 
 Stop a process.
 
@@ -187,7 +187,7 @@ fvr stop all                   # Stop all apps
 fvr stop my-app --watch        # Disable watch mode without stopping
 ```
 
-### `fvr restart <name|id|all...>`
+### `fvr restart <name>`
 
 Restart a process.
 
@@ -200,7 +200,7 @@ fvr restart all                # Restart all apps
 fvr restart my-app --watch     # Toggle watch mode for app
 ```
 
-### `fvr delete <name|id|all...>`
+### `fvr delete <name>`
 
 Stop and delete a process from FVR process list.
 
@@ -212,7 +212,7 @@ fvr del my-app                 # Same as above (alias)
 fvr delete all                 # Delete all apps
 ```
 
-### `fvr update [name|file|all...]`
+### `fvr update [name]`
 
 Update and reload apps with new configuration from config file.
 

@@ -17,7 +17,7 @@ program
 
 // Start command
 program
-  .command('start [name|file|id...]')
+  .command('start [name]')
   .description('start and daemonize an app')
   .option('--watch', 'Watch folder for changes')
   .action((nameOrConfig, options) => {
@@ -26,7 +26,7 @@ program
 
 // Stop command
 program
-  .command('stop <name|id|all...>')
+  .command('stop <name>')
   .description('stop a process')
   .option('--watch', 'Stop watching folder for changes')
   .action((name, options) => {
@@ -35,7 +35,7 @@ program
 
 // Restart command
 program
-  .command('restart <name|id|all...>')
+  .command('restart <name>')
   .description('restart a process')
   .option('--watch', 'Toggle watching folder for changes')
   .action((name, options) => {
@@ -44,7 +44,7 @@ program
 
 // Delete command
 program
-  .command('delete <name|id|all...>')
+  .command('delete <name>')
   .alias('del')
   .description('stop and delete a process from fvr process list')
   .action((name, options) => {
@@ -53,7 +53,7 @@ program
 
 // Update/Reload command
 program
-  .command('update [name|file|all...]')
+  .command('update [name]')
   .alias('reload')
   .description('update and reload apps with new configuration from config file')
   .action((nameOrConfig, options) => {
