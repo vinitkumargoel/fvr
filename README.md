@@ -159,49 +159,67 @@ FVR uses the first environment by default.
 
 ## 🎮 CLI Commands
 
-### `fvr start [config]`
+### `fvr start [name|file|id...]`
 
-Start apps defined in config file.
+Start and daemonize an app.
+
+**Options:**
+- `--watch` - Watch folder for changes
 
 ```bash
-fvr start                   # Use fvr.config.js in current directory
-fvr start fvr.config.js     # Use specific config file
-fvr start my-app            # Restart specific app by name
+fvr start                      # Use fvr.config.js in current directory
+fvr start fvr.config.js        # Use specific config file
+fvr start my-app               # Start specific app by name
+fvr start --watch              # Start with file watching enabled
+fvr start my-app --watch       # Start app with watch mode
 ```
 
-### `fvr stop <name>`
+### `fvr stop <name|id|all...>`
 
-Stop a running app.
+Stop a process.
+
+**Options:**
+- `--watch` - Stop watching folder for changes (without stopping the process)
 
 ```bash
-fvr stop my-app      # Stop specific app
-fvr stop all         # Stop all apps
+fvr stop my-app                # Stop specific app
+fvr stop all                   # Stop all apps
+fvr stop my-app --watch        # Disable watch mode without stopping
 ```
 
-### `fvr restart <name>`
+### `fvr restart <name|id|all...>`
 
-Restart a running app.
+Restart a process.
+
+**Options:**
+- `--watch` - Toggle watching folder for changes
 
 ```bash
-fvr restart my-app   # Restart specific app
-fvr restart all      # Restart all apps
+fvr restart my-app             # Restart specific app
+fvr restart all                # Restart all apps
+fvr restart my-app --watch     # Toggle watch mode for app
 ```
 
-### `fvr delete <name>`
+### `fvr delete <name|id|all...>`
 
-Stop and remove an app from FVR state.
+Stop and delete a process from FVR process list.
+
+**Alias:** `fvr del`
 
 ```bash
-fvr delete my-app    # Delete specific app
-fvr delete all       # Delete all apps
+fvr delete my-app              # Delete specific app
+fvr del my-app                 # Same as above (alias)
+fvr delete all                 # Delete all apps
 ```
 
 ### `fvr list`
 
-Display a table of all managed apps and their status.
+List all processes.
+
+**Alias:** `fvr ls`
 
 ```bash
-fvr list             # or: fvr ls
+fvr list                       # or: fvr ls
 ```
 
 **Example output:**

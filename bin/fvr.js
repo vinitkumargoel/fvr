@@ -16,39 +16,51 @@ program
 
 // Start command
 program
-  .command('start [config]')
-  .description('Start apps from config file or restart an app by name')
-  .action(startCommand);
+  .command('start [name|file|id...]')
+  .description('start and daemonize an app')
+  .option('--watch', 'Watch folder for changes')
+  .action((nameOrConfig, options) => {
+    startCommand(nameOrConfig, options);
+  });
 
 // Stop command
 program
-  .command('stop <name>')
-  .description('Stop a running app (use "all" to stop all apps)')
-  .action(stopCommand);
+  .command('stop <name|id|all...>')
+  .description('stop a process')
+  .option('--watch', 'Stop watching folder for changes')
+  .action((name, options) => {
+    stopCommand(name, options);
+  });
 
 // Restart command
 program
-  .command('restart <name>')
-  .description('Restart a running app (use "all" to restart all apps)')
-  .action(restartCommand);
+  .command('restart <name|id|all...>')
+  .description('restart a process')
+  .option('--watch', 'Toggle watching folder for changes')
+  .action((name, options) => {
+    restartCommand(name, options);
+  });
 
 // Delete command
 program
-  .command('delete <name>')
-  .description('Stop and remove an app from FVR state (use "all" to delete all)')
-  .action(deleteCommand);
+  .command('delete <name|id|all...>')
+  .alias('del')
+  .description('stop and delete a process from fvr process list')
+  .action((name, options) => {
+    deleteCommand(name, options);
+  });
 
 // List command
 program
   .command('list')
-  .description('List all managed apps with their status')
   .alias('ls')
+  .description('list all processes')
   .action(listCommand);
 
 // Logs command
 program
   .command('logs <name>')
-  .description('Stream logs for an app')
+  .description('stream logs for an app')
   .option('--lines <n>', 'Number of lines to show initially', '50')
   .option('--out', 'Show only stdout')
   .option('--err', 'Show only stderr')
