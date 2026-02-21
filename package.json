@@ -1,0 +1,40 @@
+{
+  "name": "fvr",
+  "version": "0.1.0",
+  "description": "Lightweight Node.js process manager",
+  "main": "lib/index.js",
+  "bin": {
+    "fvr": "./bin/fvr.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "process-manager",
+    "pm2",
+    "cluster",
+    "daemon",
+    "process",
+    "monitor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": [
+    "linux",
+    "darwin"
+  ],
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8"
+  }
+}
